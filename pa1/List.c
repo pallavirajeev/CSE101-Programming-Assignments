@@ -442,23 +442,23 @@ void deleteBack(List L){
 
    else{
       if (L->length == 1){
-         Node N = L->back;
-         freeNode(&N);
+         Node tempF = L->back;
+         freeNode(&tempF);
          L->cursor = NULL;
          L->front = L->back = NULL;
          L->cursorInd = -1;
       }
-      else //if (L->length > 1)
+      else
       {
-         Node N = L->back;
+         Node tempF = L->back;
          L->back = L->back->prev;
          L->back->next = NULL;
          if (L->cursorInd == L->length - 1){
             L->cursorInd = -1;
          }
-         freeNode(&N);
+         freeNode(&tempF);
       }
-      L->length--;
+      L->length-=1;
    }
 }
 
