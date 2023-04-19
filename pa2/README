@@ -1,1 +1,30 @@
+//-----------------------------------------------------------------------------
+// Pallavi Rajeev
+// prajeev
+// pa2
+// README
+// Table of contents of all files included
+//-----------------------------------------------------------------------------
+List.c 
+	Function definitions for the List ADT functions.
 
+List.h 
+	Header file that contain headers of functions to be implemented for the List ADT. 
+
+Graph.c 
+	Function definitions for the Graph ADT functions.
+
+Graph.h 
+	Header file that contain headers of functions to be implemented for the Graph ADT. 
+
+GraphTest.c 
+	Test cases to test the Graph ADT functions. 
+
+FindPath.c 
+	Main program that uses the Graph and List ADT functions to find the shortest path of a graph.
+
+Makefile 
+	File to make, clean, and run the FindPath.c and GraphTest.c files.
+
+README 
+	Table of contents of all files included with short descriptions of each file. 
