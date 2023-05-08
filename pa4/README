@@ -1,1 +1,33 @@
+//-----------------------------------------------------------------------------
+// Pallavi Rajeev
+// prajeev
+// pa4
+// README
+// Table of contents of all files included
+//-----------------------------------------------------------------------------
+List.c 
+	Function definitions for the List ADT functions.
 
+List.h 
+	Header file that contain headers of functions to be implemented for the List ADT. 
+
+ListTest.h 
+	Test cases to test the List ADT functions.
+
+Matrix.c 
+	Function definitions for the Matrix ADT functions.
+
+Matrix.h 
+	Header file that contain headers of functions to be implemented for the Matrix ADT. 
+
+MatrixTest.c 
+	Test cases to test the Matrix ADT functions. 
+
+Sparse.c 
+	Main program that is a client of the Matrix ADT; it will calculate and print corresponding matrices.
+
+Makefile 
+	File to make, clean, and run the FindComponents.c and GraphTest.c files.
+
+README 
+	Table of contents of all files included with short descriptions of each file. 
