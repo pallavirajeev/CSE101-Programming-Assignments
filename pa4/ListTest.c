@@ -15,8 +15,12 @@ int main(int argc, char* argv[]){
    List A = newList();
    List B = newList();
    List C = newList();
+   List D = newList();
+   List E = newList();
    int X[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+   int Y[] = {0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40};
    int i, u=-1, v=-2, w=-3; 
+   int l = 4;
    bool equal = false;
 
    // initialize Lists A and B
@@ -102,31 +106,87 @@ int main(int argc, char* argv[]){
    clear(A);
    printf("%d\n", length(A));
 
+   // initialize Lists D and E
+   for(i=1; i<=20; i++){
+      append(D, &Y[i]);
+      prepend(E, &Y[i]);
+   }
+
+   // print both lists of integers in forward direction
+   for(moveFront(D); index(D)>=0; moveNext(D)){
+      printf("%d ", *(int*)get(D));
+   }
+   printf("\n");
+   for(moveFront(E); index(E)>=0; moveNext(E)){
+      printf("%d ", *(int*)get(E));
+   }
+   printf("\n");
+
+   // print both lists of integers in backward direction
+   for(moveBack(D); index(D)>=0; movePrev(D)){
+      printf("%d ", *(int*)get(D));
+   }
+   printf("\n");
+   for(moveBack(E); index(E)>=0; movePrev(E)){
+      printf("%d ", *(int*)get(E));
+   }
+   printf("\n");
+
+   moveFront(D);
+   for(i=0; i<8; i++) moveNext(D);     
+   printf("index(D)=%d\n", index(D));
+   insertBefore(D, &l);                
+   printf("index(D)=%d\n", index(D));
+   for(i=0; i<3; i++) moveNext(E);     
+   printf("index(E)=%d\n", index(E));
+   
+   printf("%d\n", length(D));
+   clear(D);
+   printf("%d\n", length(D));
+
+   printf("%d\n", length(E));
+   clear(E);
+   printf("%d\n", length(E));
+
    freeList(&A);
    freeList(&B);
    freeList(&C);
+   freeList(&D);
+   freeList(&E);
 
    return(0);
 }
 
 /*
 Output of this program:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
-20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 
+20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
 A equals C is true
 index(A)=5
 index(A)=6
 index(A)=15
 index(A)=15
 index(A)=10
-index(A)=-1
+index(A)=9
 index(A)=20
 index(A)=10
-1 2 3 4 5 -1 6 7 8 9 -3 12 13 14 15 -2 16 17 18 19 20
-20 19 18 17 16 -2 15 14 13 12 -3 9 8 7 6 -1 5 4 3 2 1
+1 2 3 4 5 -1 6 7 8 9 -3 12 13 14 15 -2 16 17 18 19 20 
+20 19 18 17 16 -2 15 14 13 12 -3 9 8 7 6 -1 5 4 3 2 1 
 21
 0
+2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 
+40 38 36 34 32 30 28 26 24 22 20 18 16 14 12 10 8 6 4 2 
+40 38 36 34 32 30 28 26 24 22 20 18 16 14 12 10 8 6 4 2 
+2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 
+index(D)=8
+index(D)=9
+index(E)=-1
+21
+0
+20
+0
+
 */
