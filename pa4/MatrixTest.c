@@ -69,9 +69,63 @@ int main(){
    printf("%s\n", equals(A, B)?"true":"false" );
    printf("%s\n", equals(A, A)?"true":"false" );
 
-   makeZero(A);
-   printf("%d\n", NNZ(A));
+   printf("\n");
+   C = scalarMult(5, A);
+   printf("%d\n", NNZ(C));
+   printMatrix(stdout, C);
+   printf("\n");
+
+   D = sum(B, B);
+   printf("%d\n", NNZ(D));
+   printMatrix(stdout, D);
+   printf("\n");
+
+   E = diff(D, B);
+   printf("%d\n", NNZ(E));
+   printMatrix(stdout, E);
+   printf("\n");
+
+   F = transpose(E);
+   printf("%d\n", NNZ(F));
+   printMatrix(stdout, F);
+   printf("\n");
+
+   G = product(F, C);
+   printf("%d\n", NNZ(G));
+   printMatrix(stdout, G);
+   printf("\n");
+
+   H = copy(G);
+   printf("%d\n", NNZ(H));
+   printMatrix(stdout, H);
+   printf("\n");
+
+   makeZero(H);
+   printf("%d\n", NNZ(H));
+   printMatrix(stdout, H);
+   printf("\n");
+
+   printf("%s\n", equals(F, H)?"true":"false" );
+   printf("%s\n", equals(C, E)?"true":"false" );
+   printf("%s\n", equals(A, G)?"true":"false" );
+   printf("\n");
+
+   printf("%d\n", size(H));
+   printf("%d\n", NNZ(E));
+
+   changeEntry(G, 1,10,42); 
+   changeEntry(B, 2,11,0);
+   changeEntry(F, 3,7,15); 
+   changeEntry(A, 4,22,12);
+   printf("\n");
+   printMatrix(stdout, G);
+   printf("\n");
+   printMatrix(stdout, B);
+   printf("\n");
+   printMatrix(stdout, F);
+   printf("\n");
    printMatrix(stdout, A);
+   printf("\n");
 
    freeMatrix(&A);
    freeMatrix(&B);
@@ -128,5 +182,61 @@ Output of this program:
 true
 false
 true
+
+9
+1: (1, 5.0) (2, 10.0) (3, 15.0)
+2: (1, 20.0) (2, 25.0) (3, 30.0)
+3: (1, 35.0) (2, 40.0) (3, 45.0)
+
+6
+1: (1, 2.0) (3, 2.0)
+2: (2, 2.0)
+3: (1, 2.0) (2, 2.0) (3, 2.0)
+
+6
+1: (1, 1.0) (3, 1.0)
+2: (2, 1.0)
+3: (1, 1.0) (2, 1.0) (3, 1.0)
+
+6
+1: (1, 1.0) (3, 1.0)
+2: (2, 1.0) (3, 1.0)
+3: (1, 1.0) (3, 1.0)
+
+9
+1: (1, 40.0) (2, 50.0) (3, 60.0)
+2: (1, 55.0) (2, 65.0) (3, 75.0)
+3: (1, 40.0) (2, 50.0) (3, 60.0)
+
+9
+1: (1, 40.0) (2, 50.0) (3, 60.0)
+2: (1, 55.0) (2, 65.0) (3, 75.0)
+3: (1, 40.0) (2, 50.0) (3, 60.0)
+
 0
+
+false
+false
+false
+
+100000
+6
+
+1: (1, 40.0) (2, 50.0) (3, 60.0) (10, 42.0)
+2: (1, 55.0) (2, 65.0) (3, 75.0)
+3: (1, 40.0) (2, 50.0) (3, 60.0)
+
+1: (1, 1.0) (3, 1.0)
+2: (2, 1.0)
+3: (1, 1.0) (2, 1.0) (3, 1.0)
+
+1: (1, 1.0) (3, 1.0)
+2: (2, 1.0) (3, 1.0)
+3: (1, 1.0) (3, 1.0) (7, 15.0)
+
+1: (1, 1.0) (2, 2.0) (3, 3.0)
+2: (1, 4.0) (2, 5.0) (3, 6.0)
+3: (1, 7.0) (2, 8.0) (3, 9.0)
+4: (22, 12.0)
+
 */
