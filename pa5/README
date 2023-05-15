@@ -1,1 +1,24 @@
+//-----------------------------------------------------------------------------
+// Pallavi Rajeev
+// prajeev
+// pa5
+// README
+// Table of contents of all files included
+//-----------------------------------------------------------------------------
+List.cpp 
+	Function definitions for the List ADT functions.
 
+List.h 
+	Header file that contain headers of functions to be implemented for the List ADT.  
+
+ListTest.cpp
+	Test cases to test the List ADT functions. 
+
+Shuffle.cpp
+	Main program that uses the List ADT functions to alter the List and perform a shuffle.
+
+Makefile 
+	File to make, clean, and run the Shuffle.cpp and ListTest.cpp files.
+
+README 
+	Table of contents of all files included with short descriptions of each file. 
