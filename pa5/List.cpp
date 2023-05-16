@@ -391,7 +391,6 @@ void List::cleanup(){
         	//check if the current node elm's data is the same
         	//as the other next elms data
             if(tempCur->data == temp2->data){
-
                 //if they are equivalent then you need 
                 //get rid of it to cleanup code
                 //first make the tempCur stored in temp1's next and 
@@ -399,7 +398,14 @@ void List::cleanup(){
                 temp1->next = temp2->next;
                 //then set temp cur's nexts next prev to temp1
                 temp2->next->prev = temp1;
-
+                // Check if beforeCursor needs to be updated
+                if(beforeCursor == temp2){
+                    beforeCursor = temp1;
+                }
+                // Check if afterCursor needs to be updated
+                if(afterCursor == temp2){
+                    afterCursor = temp2->next;
+                }
                 //then you can delete temp2 which is the repeat elm
                 delete temp2;
                 //then temp2 becomes the next of temp1 because temp2 is deleted 
@@ -408,7 +414,6 @@ void List::cleanup(){
                 //since you deleted a repeat elm the number of elements must 
                 //be decreased
                 num_elements--;
-                
                 //then check from where exactly the elm was deleted 
                 //this is why we have a tempPos variable to know 
                 //where in the list we deleted an elm, relative to the 
@@ -434,7 +439,6 @@ void List::cleanup(){
         //increase the outer loop temp pos var
         pos++;
     }
-
 }
 
 
