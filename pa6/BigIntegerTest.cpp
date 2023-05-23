@@ -99,78 +99,100 @@ int main(){
 
    cout << endl;
 
-   // string a = "882133";
-   // string b = "659179";
-   // BigInteger tempA = BigInteger(a);
-   // BigInteger tempB = BigInteger(b);
-   // cout << "Res: " << tempA + tempB << endl;
+   //more tests to test all functions
 
-   // BigInteger Q = BigInteger("1234");
-   // BigInteger R = BigInteger("5678");
-   // cout << Q * R << endl;
-   // BigInteger R = BigInteger("+111122223333");
+   //BigInt from string
+   string a = "882133";
+   string b = "659179";
+   BigInteger tempA = BigInteger(a);
+   BigInteger tempB = BigInteger(b);
+   cout << "Add: " << tempA + tempB << endl;
+   cout << "Sub: " << tempA - tempB << endl;
+   cout << "Mult: " << tempA * tempB << endl;
 
-   // BigInteger S;
-   // BigInteger T;
-   // S = Q - R;
-   //  // if (S.sign() != 0)
-   //  //   return 1;
 
-   //  // pos - pos < 0
-   //  R = BigInteger("121122223333");
-   //  T = BigInteger("-10000000000");
-   //  S = Q - R;
-   //  // if (S.sign() != -1)
-   //  //   return 21;
-   //  // if (!(S == T))
-   //  //   return 22;
+   int comp1 = tempA.compare(tempB);
+   cout << "compare: " << comp1 << endl;
 
-   //  // pos - pos > 0
-   //  R = BigInteger("101122223333");
-   //  T = BigInteger("10000000000");
-   //  S = Q - R;
-   //  // if (S.sign() != 1)
-   //  //   return 31;
-   //  // if (!(S == T))
-   //  //   return 32;
+   cout << "(tempA==tempB) = " << ((tempA==tempB)?"True":"False") << endl;
+   cout << "(tempA<tempB)  = " << ((tempA<tempB)? "True":"False") << endl;
+   cout << "(tempA<=tempB) = " << ((tempA<=tempB)?"True":"False") << endl;
+   cout << "(tempA>tempB)  = " << ((tempA>tempB)? "True":"False") << endl;
+   cout << "(tempA>=tempB) = " << ((tempA>=tempB)?"True":"False") << endl << endl;
 
-   //  // pos - neg = pos
-   // cout << "bef R: " << R << endl;
-   // cout << "bef R sign: " << R.sign() << endl;
+   BigInteger X = BigInteger("1234");
+   BigInteger Y = BigInteger("5678");
+   cout << "Add: " << X + Y << endl;
+   cout << "Sub: " << X - Y << endl;
+   cout << "Mult: " << X * Y << endl;
 
-   //  R.negate();
-   //  T = BigInteger("212244446666");
-   // cout << "Q: " << Q << endl;
-   // cout << "after R: " << R << endl;
-   // cout << "after R sign: " << R.sign() << endl;
+   int comp2 = X.compare(Y);
+   cout << "compare: " << comp2 << endl;
 
-   //  S = Q - R;
-   //  // if (S.sign() != 1)
-   //  //   return 41;
-   // cout << "S: " << S << endl;
-   // cout << "T: " << T << endl;
-   //  if (!(S == T))
-   //    cout << "42" << endl;
+   cout << "(X==Y) = " << ((X==Y)?"True":"False") << endl;
+   cout << "(X<Y)  = " << ((X<Y)? "True":"False") << endl;
+   cout << "(X<=Y) = " << ((X<=Y)?"True":"False") << endl;
+   cout << "(X>Y)  = " << ((X>Y)? "True":"False") << endl;
+   cout << "(X>=Y) = " << ((X>=Y)?"True":"False") << endl << endl;
 
-   //  // neg - pos = neg
-   //  T.negate();
-   //  S = R - Q;
-   //  if (S.sign() != -1)
-   //    cout << "51" << endl;
-   //  if (!(S == T))
-   //    cout << "52" << endl;
+   //BigInt from long
+   BigInteger R = BigInteger("+111122223333");
 
-   // BigInteger L = BigInteger("+111122223333");
-   // cout << "L: " << L << endl;
-   // BigInteger M = BigInteger("-111122223333");
-   // cout<< "M sign: " << M.sign() << endl;
-   // cout << "M: " << M << endl;
-   // BigInteger N;
-   // N = L + M;
-   // cout << N << endl;
-   // cout<< N.sign() << endl;
-   // if (N.sign() != 0)
-   //    return 2;
+   R.makeZero();
+   cout << "R: " << R << endl;
+
+   BigInteger S;
+   BigInteger T;
+
+   R = BigInteger("101122223333");
+   S+=R;
+   S = BigInteger("101122223333");
+   S-=R;
+   S = BigInteger("101122223333");
+   S*=R;
+   cout << "Add eq: " << S << endl;
+   cout << "Sub eq: " << S << endl;
+   cout << "Mult eq: " << S << endl;
+
+   cout << "bef R: " << R << endl;
+   cout << "bef R sign: " << R.sign() << endl;
+
+   R.negate();
+
+   cout << "after R: " << R << endl;
+   cout << "after R sign: " << R.sign() << endl;
+
+   cout << R.to_string() << endl;
+
+   T = BigInteger("212244446666");
+
+   
+   T.negate();
+   cout << "after T sign: " << T.sign() << endl;
+
+   T.makeZero();
+   cout << "T: " << T << endl;
+
+
+   BigInteger L = BigInteger("+123456789876");
+   cout << "L: " << L << endl;
+   BigInteger M = BigInteger("-123456789876");
+   cout<< "M sign: " << M.sign() << endl;
+   cout << "M: " << M << endl;
+   
+   L+=M;
+   L = BigInteger("+123456789876");
+   L-=M;
+   L = BigInteger("+123456789876");
+   L*=M;
+   cout << "Add eq: " << L << endl;
+   cout << "Sub eq: " << L << endl;
+   cout << "Mult eq: " << L << endl;
+
+   cout << L.to_string() << endl;
+
+   cout << "Tests complete!" << endl;
+
 
    return EXIT_SUCCESS;
 
