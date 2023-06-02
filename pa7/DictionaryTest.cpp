@@ -171,5 +171,89 @@ int main(){
 
    cout << endl;  
 
+   //more tests (test each function at least twice)
+    Dictionary dict1;
+    Dictionary dict2;
+
+    dict1.setValue("apple", 5);
+    dict1.setValue("orange", 3);
+    dict1.setValue("banana", 7);
+
+    dict2.setValue("grape", 2);
+    dict2.setValue("pear", 4);
+    dict2.setValue("kiwi", 6);
+
+    //size() 
+    cout << "Size of dict1: " << dict1.size() << endl;
+    cout << "Size of dict2: " << dict2.size() << endl;
+
+    //contains() 
+    cout << "Does dict1 contain 'apple'? " << (dict1.contains("apple") ? "Yes" : "No") << endl;
+    cout << "Does dict2 contain 'banana'? " << (dict2.contains("banana") ? "Yes" : "No") << endl;
+
+    //getValue() 
+    if(dict1.contains("apple")){
+        valType& value1 = dict1.getValue("apple");
+        cout << "Value of 'apple' in dict1: " << value1 << endl;
+    } 
+    else{
+        cout << "Key 'apple' not found in dict1." << endl;
+    }
+
+    if(dict2.contains("banana")){
+        valType& value2 = dict2.getValue("banana");
+        cout << "Value of 'banana' in dict2: " << value2 << endl;
+    } 
+    else{
+        cout << "Key 'banana' not found in dict2." << endl;
+    }
+
+    //hasCurrent() 
+    cout << "Is current iterator defined in dict1? " << (dict1.hasCurrent() ? "Yes" : "No") << endl;
+    cout << "Is current iterator defined in dict2? " << (dict2.hasCurrent() ? "Yes" : "No") << endl;
+
+    //currentKey() 
+    if(dict1.hasCurrent()){
+        keyType key1 = dict1.currentKey();
+        cout << "Current key in dict1: " << key1 << endl;
+    } 
+    else{
+        cout << "No current key in dict1." << endl;
+    }
+
+    if(dict2.hasCurrent()){
+        keyType key2 = dict2.currentKey();
+        cout << "Current key in dict2: " << key2 << endl;
+    } 
+    else{
+        cout << "No current key in dict2." << endl;
+    }
+
+    //currentVal() function
+    if(dict1.hasCurrent()){
+        valType& value1 = dict1.currentVal();
+        cout << "Current value in dict1: " << value1 << endl;
+    } 
+    else{
+        cout << "No current value in dict1." << endl;
+    }
+
+    if(dict2.hasCurrent()){
+        valType& value2 = dict2.currentVal();
+        cout << "Current value in dict2: " << value2 << endl;
+    } 
+    else{
+        cout << "No current value in dict2." << endl;
+    }
+
+    //clear()
+    dict1.clear();
+    dict2.clear();
+
+    cout << "Size of dict1 after clear(): " << dict1.size() << endl;
+    cout << "Size of dict2 after clear(): " << dict2.size() << endl;
+
+   cout << "Test complete!" << endl;
+
    return( EXIT_SUCCESS );
 }
