@@ -1,1 +1,25 @@
+//-----------------------------------------------------------------------------
+// Pallavi Rajeev
+// prajeev
+// pa7
+// README
+// Table of contents of all files included
+//-----------------------------------------------------------------------------
 
+Dictionay.cpp 
+	Function definitions for the Dictionary ADT functions.
+
+Dictionary.h 
+	Header file that contain headers of functions to be implemented for the Dictionary ADT.  
+
+DictionaryTest.cpp
+	Test cases to test the Dictionary ADT functions. 
+
+Order.cpp
+	Main program that uses the exported operations in Dictionary.cpp.
+
+Makefile 
+	File to make, clean, and run the Order.cpp and DictionaryTest.cpp files.
+
+README 
+	Table of contents of all files included with short descriptions of each file. 
